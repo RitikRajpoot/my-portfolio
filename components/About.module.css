@@ -1,0 +1,140 @@
+.about {
+  background: var(--clr-bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Left */
+.left { }
+
+.heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin: 1.2rem 0 1.5rem;
+  line-height: 1.15;
+}
+
+.para {
+  color: var(--clr-muted);
+  line-height: 1.85;
+  margin-bottom: 1.2rem;
+  font-size: 0.98rem;
+}
+
+.info {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--clr-card-border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  padding: 0.85rem 1.2rem;
+  border-bottom: 1px solid var(--clr-card-border);
+  gap: 1rem;
+}
+.infoRow:last-child { border-bottom: none; }
+
+.infoLabel {
+  font-size: 0.78rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--clr-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  min-width: 80px;
+}
+
+.infoValue {
+  font-size: 0.9rem;
+  color: var(--clr-text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a.infoValue:hover {
+  color: var(--clr-accent);
+}
+
+/* Right */
+.right {
+  position: relative;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,87,34,0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: inherit;
+}
+.card:hover::before { opacity: 1; }
+
+.cardIcon {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.cardTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--clr-white);
+}
+
+.cardDesc {
+  font-size: 0.83rem;
+  color: var(--clr-muted);
+  line-height: 1.7;
+}
+
+/* Decorative SVG */
+.deco {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 180px;
+  height: 180px;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .deco { display: none; }
+}
+
+@media (max-width: 480px) {
+  .cards { grid-template-columns: 1fr; }
+}
