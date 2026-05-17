@@ -178,7 +178,7 @@ export default function HeroSection() {
               animation: 'fadeSlideUp 0.9s ease 0.1s both',
             }}
           >
-            <img
+            {/* <img
               width={150}
               height={150}
               style={{
@@ -189,7 +189,7 @@ export default function HeroSection() {
               src='./profile-pic.jpg'
               alt="Ritik's Picture"
               title="Ritik's Picture"
-            />
+            /> */}
             <h1
               style={{
                 fontFamily: 'var(--font-display)',
